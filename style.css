@@ -1,0 +1,144 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+@-webkit-keyframes menu {
+  0% {
+    opacity: 0;
+    left: 2rem;
+  }
+  100% {
+    opacity: 1;
+    left: 0rem;
+  }
+}
+
+@keyframes menu {
+  0% {
+    opacity: 0;
+    left: 2rem;
+  }
+  100% {
+    opacity: 1;
+    left: 0rem;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Audiowide, sans-serif;
+  background-color: #0A0A0A;
+  color: #008C8C;
+}
+
+h1 {
+  font-size: 7rem;
+  -webkit-transform: translateY(2rem);
+          transform: translateY(2rem);
+  color: #0A0A0A;
+}
+
+h2 {
+  color: #00BEBE;
+  font-size: 3rem;
+  margin-left: 2rem;
+  font-weight: 500;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.header__sign {
+  -webkit-transform: translateY(5.9rem);
+          transform: translateY(5.9rem);
+}
+
+.container {
+  height: 10rem;
+  background-image: -webkit-gradient(linear, right top, left top, from(#008C8C), to(#00BEBE));
+  background-image: linear-gradient(to left, #008C8C, #00BEBE);
+  margin: 5rem 0 0 0;
+  padding: 0 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.navigation {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 3rem;
+  line-height: 5rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 5rem 5rem 0 0;
+  text-align: end;
+  -webkit-animation: menu 1s;
+          animation: menu 1s;
+}
+
+.navigation__button {
+  display: inline-block;
+  position: relative;
+  color: #008C8C;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.navigation__button:after {
+  content: '';
+  position: absolute;
+  width: 120%;
+  padding-right: 0rem;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  right: 0;
+  background-color: #00BEBE;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+.navigation__button:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+}
+
+.navigation__button:hover {
+  cursor: pointer;
+  color: #00BEBE;
+  padding-right: 0.5rem;
+  font-size: 110%;
+}
+
+.projects {
+  margin-right: 4rem;
+  font-size: 2.5rem;
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

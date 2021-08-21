@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+// VARIABLES
+$color-dark: #0A0A0A;
+$color-primary-light: #00BEBE;
+$color-primary-dark: #008C8C;
+
+//ANIMATIONS
+@keyframes menu {
+    0%   {opacity: 0; left:2rem}
+    100% {opacity: 1; left:0rem}
+  }
+
+//PAGE
+  html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Audiowide, sans-serif;
+    background-color: $color-dark;
+    color: $color-primary-dark;
+
+}
+
+h1 {
+    font-size: 7rem;
+    transform: translateY(2rem);
+    color: $color-dark;
+}
+
+h2 {
+    color: $color-primary-light;
+    font-size: 3rem;
+    margin-left: 2rem;
+    font-weight: 500;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.header {
+    &__sign {
+        transform: translateY(5.9rem);
+    }
+}
+
+.container {
+    height: 10rem;
+    // background-color: rgb(0, 140, 140);
+    background-image: linear-gradient(
+        to left,
+        $color-primary-dark,
+        $color-primary-light
+        );
+    margin: 5rem 0 0 0;
+    padding: 0 10rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    font-size: 3rem;
+    line-height: 5rem;
+    justify-content: flex-end;
+    padding: 5rem 5rem 0 0;
+    text-align: end;
+    animation: menu 1s;
+
+    &__button {
+        display: inline-block;
+        position: relative;
+        color: $color-primary-dark;
+        transition: all 0.2s;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            width: 120%;
+            padding-right: 0rem;
+            transform: scaleX(0);
+            height: 3px;
+            bottom: 0;
+            right: 0;
+            background-color: $color-primary-light;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        &:hover:after {
+            transform: scale(1);
+            transform-origin: bottom right;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: $color-primary-light;
+            padding-right: 0.5rem;
+            font-size: 110%;
+        }
+    }
+}
+
+.projects {
+    margin-right: 4rem;
+    font-size: 2.5rem;
+    display: none;
+}
