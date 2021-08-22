@@ -12,19 +12,19 @@ contactButton.addEventListener("click", showContact);
 
 
 function showAbout(){
-    aboutBox.classList.toggle("hidden");
+    aboutBox.classList.remove("hidden");
     projectsBox.classList.add("hidden");
     contactBox.classList.add("hidden")
 };
 
 function showProjects(){
     aboutBox.classList.add("hidden");
-    projectsBox.classList.toggle("hidden");
+    projectsBox.classList.remove("hidden");
     contactBox.classList.add("hidden")
 };
 
 function showContact(){
     aboutBox.classList.add("hidden")
     projectsBox.classList.add("hidden");
-    contactBox.classList.toggle("hidden");
+    contactBox.classList.remove("hidden");
 };
