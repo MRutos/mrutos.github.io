@@ -1,0 +1,118 @@
+html {
+  font-family: Roboto;
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, right top, from(skyblue), to(khaki));
+  background-image: linear-gradient(to right, skyblue, khaki);
+}
+
+div.container {
+  width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+div.container div.header {
+  background: #2980b9;
+  color: white;
+  font-size: 1.5em;
+  height: 50px;
+  margin-top: 100px;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: none;
+}
+
+div.container input {
+  height: 50px;
+  background-color: #f7f7f7;
+  color: #2980b9;
+  border: 3px solid rgba(0, 0, 0, 0);
+  font-size: 18px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 13px 13px 13px 20px;
+}
+
+div.container input:focus {
+  background-color: white;
+  border: 3px solid #2980b9;
+  outline: none;
+}
+
+div.container ul {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+div.container ul li {
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div.container ul li div.trash {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 0;
+  padding: 0;
+  background: #e1260f;
+  height: 100%;
+  color: white;
+  -webkit-transition-duration: 400ms;
+          transition-duration: 400ms;
+  opacity: 0;
+}
+
+div.container ul li div.todo {
+  color: grey;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 13px 0 13px 25px;
+}
+
+div.container ul li:hover div.trash {
+  width: 40px;
+  opacity: 1.0;
+}
+
+div.container ul span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.grey {
+  background-color: #f7f7f7;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=style.css.map */

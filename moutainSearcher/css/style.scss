@@ -1,0 +1,49 @@
+body {
+    background: url(../images/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Rancho', cursive;
+    padding-top: 60px;
+    font-size: 1.8em;
+}
+p {
+    margin-top: -5px;
+    padding-top: 3%;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    min-height: 100px;
+    border-radius: 0 0 4px 4px;
+}
+.navbar {
+    opacity: 0.9;
+}
+a.navbar-brand {
+    font-size: 1.2em;
+    background-color: white;
+}
+.jumbotron {
+    text-align: center;
+}
+.gallery {
+    padding-bottom: 2%;
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+h3 {
+    padding: 20px 10px 30px 40px;
+}
+input[type="text"].form-control {
+    width: 200px;
+}
+hr {
+    width: 50%;
+    opacity: 0.5;
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 5px 1px white;
+}
+hr:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+}

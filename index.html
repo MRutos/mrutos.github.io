@@ -18,19 +18,114 @@
             <h1>Michał Ruta</h1>
         </div>
     </header>
-    <section class="navigation">
-        <ul>
-            <li><a class="navigation__button">About me</a></li>
-            <li><a class="navigation__button">Projects</a></li>
-            <ul class="projects">
-                <li><a class="navigation__button">Sass & CSS</a></li>
-                <li><a class="navigation__button">Bootstrap</a></li>
-                <li><a class="navigation__button">JS</a></li>
-                <li><a class="navigation__button">jQuerry</a></li>
+    <div class="center">
+        <section class="content">
+            <div id="about-box" class="content__about hidden">
+                <div class="title">About me</div>
+                <div class="about">
+                    <img src="img/myphoto.png" alt="" class="about__img">
+                    <div class="about__text">
+                        <p class="about__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, qui reiciendis? Voluptatem, vitae eaque quas repudiandae ad at qui dignissimos.
+                        </p>
+                        <p class="about__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, qui reiciendis? Voluptatem, vitae eaque quas repudiandae ad at qui dignissimos.
+                        </p>
+                        <p class="about__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, qui reiciendis? Voluptatem, vitae eaque quas repudiandae ad at qui dignissimos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="projects-box" class="content__projects hidden">
+                <div class="title">Projects</div>
+                <div class="project">
+                    <a class="project__button" href="/natours/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            Natours
+                        </p>
+                    </a>
+                    <a class="project__button" href="/trillo/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            Trillo
+                        </p>
+                    </a>
+                    <a class="project__button" href="/nexter/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            Nexter
+                        </p>
+                    </a>
+                    <a class="project__button" href="/candyMuseum/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            Candy Museum
+                        </p>
+                    </a>
+                    <a class="project__button" href="/jaktorowo/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            Agrotourism Jaktorowo
+                        </p>
+                    </a>
+                    <a class="project__button" href="/colorGame/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            Color Game
+                        </p>
+                    </a>
+                    <a class="project__button" href="/drum/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            Easy Drum
+                        </p>
+                    </a>
+                    <a class="project__button" href="/pattern/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            Pattern Project
+                        </p>
+                    </a>
+                    <a class="project__button" href="/toDoList/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            To Do List
+                        </p>
+                    </a>
+                    <a class="project__button" href="/moutainSearcher/">
+                        <div class="project__test"></div>
+                        <!-- <img src="" alt="" class="project__img"> -->
+                        <p class="project__description">
+                            Maoutain Searcher
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div id="contact-box" class="content__contact hidden">
+                <div class="title">Contact</div>
+            </div>
+        </section>
+        <section class="navigation">
+            <ul>
+                <li><a id="about-button" class="navigation__button">About me</a></li>
+                <li><a id="projects-button" class="navigation__button">Projects</a></li>
+                <li><a id="contact-button" class="navigation__button">Contact</a></li>
             </ul>
-            <li><a class="navigation__button">Contact</a></li>
-        </ul>
-    </section>
+        </section>
+    </div>
+
     <footer></footer>
+    <script src="script.js"></script>
 </body>
 </html>

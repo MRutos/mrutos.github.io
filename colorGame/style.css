@@ -1,0 +1,87 @@
+html{
+    font-family: "Montserrat", "Avenir";
+}
+body{
+    margin: 0;
+    background: rgb(35, 35, 35);
+}
+h1{
+    color: white;
+    text-align: center;
+    width: 100%;
+    height:100%;
+    margin:0;
+    padding: 20px 0;
+    line-height: 1.1;
+    font-weight: normal;
+}
+button{
+    font-family: "Montserrat", "Avenir";
+    padding: 0 6px;
+    font-size: 16px;
+    background: none;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: rgb(70, 130, 180);
+    outline: none;
+}
+#keyColor{
+    font-size: 2em;
+}
+.header{
+    display: block;
+    min-height: 180px;
+    background: rgb(70, 130, 180);
+}
+.navbar{
+    display:flex;
+    align-items: stretch;
+    justify-content: center;
+    height: 30px;
+    background: white;
+    margin-bottom: 20px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.square{
+    background: red;
+    width: 30%;
+    padding-top: 30%;
+    border-radius: 30px;
+    margin: 10px;
+    transition: ease 500ms;
+    -webkit-transition: ease 500ms;
+    -moz-transition: ease 500ms;
+    float: left;
+}
+.comment{
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+}
+.selected{
+    color: white;
+    background-color: rgb(70, 130, 180);
+}
+.hidden{
+    display: none;
+}
+.invisible{
+    opacity: 0;
+}
+button:hover{
+    color: white;
+    background-color: rgb(70, 130, 180);
+    transition: ease 500ms;
+    -webkit-transition: ease 500ms;
+    -moz-transition: ease 500ms;
+}
+button:active{
+    color: white;
+    background-color: rgb(70, 130, 180);
+}

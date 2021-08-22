@@ -1,0 +1,64 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100vh - 75vh);
+  margin: 75vh 10vw 0 10vw;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.yt {
+  position: absolute;
+  top: 50px;
+}
+
+.button {
+  width: 100px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 5px;
+  border-radius: 60px 60px 100px 80px;
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button p {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 250%;
+  color: black;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.button.playing {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-transition: 0.2s -webkit-transform ease;
+  transition: 0.2s -webkit-transform ease;
+  transition: 0.2s transform ease;
+  transition: 0.2s transform ease, 0.2s -webkit-transform ease;
+}
+
+.button.playing p {
+  color: yellow;
+}
+
+.button.playing p.red {
+  color: red;
+}
+/*# sourceMappingURL=main.css.map */
