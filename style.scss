@@ -437,7 +437,10 @@ span {
     &__paragraph {
         margin: 1rem;
         text-indent: 2rem;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        @include respond(tab-port) { //width < 1100
+            font-size: 2rem;
+        }
     }
 }
 
