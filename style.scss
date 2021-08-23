@@ -93,6 +93,11 @@ h1 {
     font-size: 7rem;
     transform: translateY(2rem);
     color: $color-dark;
+    @include respond(phone) { //width < 1100
+        font-size: 5.5rem;
+        transform: translateY(1.7rem);
+
+    }
 }
 
 h2 {
@@ -100,6 +105,9 @@ h2 {
     font-size: 3rem;
     margin-left: 2rem;
     font-weight: 500;
+    @include respond(phone) { //width < 1100
+        font-size: 2.5rem;
+    }
 }
 
 p {
@@ -151,7 +159,6 @@ span {
     @include respond(phone) { //width < 1200
         text-align: center;
         justify-content: center;
-        // align-items: center;
         padding: 0;
     }
 }
@@ -244,8 +251,8 @@ span {
         }
         @include respond(phone) { // width < 900
             text-align: center;
-            width: 16rem;
-            font-size: 2.8rem;
+            width: 14rem;
+            font-size: 2.5rem;
         }
          
         &:after {
@@ -364,6 +371,7 @@ span {
         margin-top: 0rem;
         text-align: center;
     }
+
 }
 
 .hidden {
@@ -419,6 +427,7 @@ span {
     &__paragraph {
         margin: 1rem;
         text-indent: 2rem;
+        font-size: 2rem;
     }
 }
 
