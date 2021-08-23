@@ -20,10 +20,16 @@ $color-primary-dark: #008C8C;
   @keyframes contentIn2 {
     0%   {opacity: 0; left:-100%}
     100% {opacity: 1; left:0rem}
+    
   }
   @keyframes contentIn3 {
     0%   {opacity: 0}
     90% {opacity: 0}
+    100% {opacity: 1}
+  }
+
+  @keyframes contentIn4 {
+    0%   {opacity: 0}
     100% {opacity: 1}
   }
 
@@ -37,9 +43,39 @@ $color-primary-dark: #008C8C;
     100% {opacity: 0; left:-2rem}
 }
 
+//RESPOND
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 38.75em) { @content } //620px
+    };
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 53.75em) { @content } //860px
+    };
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 68.75em) { @content } //1100px
+    };
+    @if $breakpoint == desktop {
+        @media only screen and (max-width: 78.125em) { @content } //1250px
+    };
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 106.25em) { @content } //1800px
+    }
+}
+
 //PAGE
 html {
     font-size: 62.5%;
+
+    @include respond(tab-land) { //width < 1200
+        font-size: 56.25%; // 1rem = 9px;
+    }
+
+    @include respond(tab-port) { // width < 900
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%; // 1rem = 12px;
+    }
 }
 
 body {
@@ -47,6 +83,10 @@ body {
     background-color: $color-dark;
     color: $color-primary-dark;
 
+}
+
+footer {
+    margin-bottom: 5rem;
 }
 
 h1 {
@@ -64,10 +104,18 @@ h2 {
 
 p {
     font-size: 1.5rem;
+    @include respond(tab-port) { //width < 1100
+        font-size: 3rem;
+        text-align: justify;
+    }
 }
 
 ul {
     list-style-type: none;
+    list-style: none outside;
+    @include respond(tab-land) { //width < 1200
+        display: flex;
+    }
 }
 
 a,
@@ -77,49 +125,84 @@ a:visited {
     text-decoration: none;
 }
 
+span {
+    color:#00BEBE;
+}
+
 .header {
     &__sign {
-        transform: translateY(5.9rem);
+        transform: translateY(3.9rem);
     }
 }
 
 .container {
-    height: 10rem;
+    height: 8rem;
     // background-color: rgb(0, 140, 140);
     background-image: linear-gradient(
         to left,
         $color-primary-dark,
         $color-primary-light
         );
-    margin: 5rem 0 0 0;
+    margin: 3rem 0 0 0;
     padding: 0 10rem;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    @include respond(phone) { //width < 1200
+        text-align: center;
+        justify-content: center;
+        // align-items: center;
+        padding: 0;
+    }
 }
+
 .center {
     display: flex;
     justify-content: space-between;
+    @include respond(tab-land) { //width < 1200
+        flex-direction: column-reverse;
+    }
+
 }
 
 .content {
     width: 80%;
+    height: 40%;
+    @include respond(tab-land) { //width < 1200
+        margin: auto;
+    }
+    @include respond(tab-port) { //width < 1100
+        width: 100%;
+    }
+    
     &__about {
         position: relative;
         animation: contentIn2 0.2s;
         display: block;
+        @include respond(tab-land) { //width < 1200
+            animation: contentIn4 0.3s;
+            }
+            
     }
     &__projects {
         position: relative;
         animation: contentIn2 0.2s;
+        @include respond(tab-land) { //width < 1200
+            animation: contentIn4 0.3s;
+            }
     }
     &__contact {
         position: relative;
         animation: contentIn2 0.2s;
+        @include respond(tab-land) { //width < 1200
+            text-align: center;
+            animation: contentIn4 0.3s;
+            }
     }
 }
 
 .navigation {
+    width: 20%;
     position: relative;
     display: flex;
     font-size: 3rem;
@@ -128,12 +211,42 @@ a:visited {
     padding: 5rem 5rem 0 0;
     text-align: end;
     animation: contentIn 1s;
+    @include respond(tab-land) { //width < 1200
+        align-self: flex-end;
+    }
+    @include respond(tab-port) { //width < 1200
+        width:100%;
+        align-self:center;
+        padding: 5rem 0 0 0;
+        text-align: center;
+    }
+    @include respond(phone) { // width < 900
+        justify-content: space-evenly;
+        margin: auto;
+        width: 16rem;
+        font-size: 2.5rem;
+    }
+    
 
     &__button {
         display: inline-block;
         position: relative;
         color: $color-primary-dark;
         transition: all 0.2s;
+        @include respond(tab-land) { //width < 1200
+            width: 20rem;
+            text-align: center;
+            transform:translateY(-18.5rem);
+        }
+        @include respond(tab-port) { // width < 900
+            text-align: center;
+            transform:translateY(-3rem);
+        }
+        @include respond(phone) { // width < 900
+            text-align: center;
+            width: 16rem;
+            font-size: 2.8rem;
+        }
          
         &:after {
             content: '';
@@ -142,33 +255,46 @@ a:visited {
             padding-right: 0rem;
             transform: scaleX(0);
             height: 3px;
-            bottom: 0;
-            right: 0;
+            bottom: 5px;
+            right: 11%;
             background-color: $color-primary-light;
-            transform-origin: bottom right;
+            transform-origin: bottom;
             transition: transform 0.25s ease-out;
+            @include respond(tab-land) { //width < 1200
+                width: 80%;
+                bottom: 5px;
+                right: 11%;
+            }
+
         }
 
         &:hover:after {
             transform: scale(1);
-            transform-origin: bottom right;
+            transform-origin: bottom;
         }
 
         &:hover {
             cursor: pointer;
             color: $color-primary-light;
             padding-right: 0.5rem;
+            
             // font-size: 110%;
         }
     }
 }
 
 .project {
-    margin-right: 4rem;
+    margin: auto;
     font-size: 2.5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include respond(desktop) { //width < 1200
+        margin: auto;
+    }
+    @include respond(tab-port) { //width < 1100
+       justify-content: space-around;
+    }
 
     &__button {
         padding: 1.5rem;
@@ -176,9 +302,18 @@ a:visited {
         width: 13rem;
         border-radius: 1rem;
         border: $color-dark solid 0.2rem;
+        @include respond(desktop) { //width < 1200
+            width: 10rem;
+        }
+        @include respond(tab-port) { //width < 1100
+            width: 15rem;
+        }
+        @include respond(phone) { //width < 1100
+            width: 30rem;
+        }
 
-        &:hover,
-        &:focus {
+        
+        &:hover {
             cursor: pointer;
             border: $color-primary-light solid 0.2rem;
             border-radius: 1rem;
@@ -199,6 +334,18 @@ a:visited {
         border-radius: 1rem;
         border-bottom: solid $color-primary-dark 2px;
         border-top: solid $color-primary-dark 2px;
+        @include respond(desktop) { //width < 1200
+            width: 10rem;
+            height: 10rem;
+        }
+        @include respond(tab-port) { //width < 1100
+            width: 15rem;
+            height: 15rem;
+        }
+        @include respond(phone) { //width < 1100
+            width: 30rem;
+            height: 30rem;
+        }
     }
 
     &__description {
@@ -207,10 +354,16 @@ a:visited {
 }
 
 
-
 .title {
     font-size: 5rem;
     margin-top: -4.9rem;
+    @include respond(tab-land) { //width < 1100
+        margin-top: -5rem;
+    }
+    @include respond(tab-port) { //width < 1100
+        margin-top: 0rem;
+        text-align: center;
+    }
 }
 
 .hidden {
@@ -225,31 +378,59 @@ a:visited {
     margin: 2rem 1rem 0 1rem;
     box-sizing: border-box;
     border-radius: 3rem; 
-    box-shadow: inset 3px 0px 0px 3px $color-primary-light;
+    // box-shadow: inset 3px 0px 0px 3px $color-primary-light;
     animation: contentExpand 0.5s;
-    max-height: 30rem;
+    min-height: auto;
+    border-top: solid $color-primary-light 3px;
+    border-bottom: solid $color-primary-light 3px;
+    @include respond(tab-port) { //width < 1100
+        flex-direction: column;
+        border-top: none;
+        border-bottom: none;
+    }
+
 
     &__img {
-        height: 30rem;
+        height: 35rem;
         border-radius: 3rem;
         // border-bottom-right-radius: 3rem;
         box-sizing: border-box;
-        border-bottom: solid $color-primary-light 3px;
         // border-top-right-radius: 3rem;
-        border-top: solid $color-primary-light 3px;
+        align-self: center;
+        @include respond(tab-port) { //width < 1100
+            border-top: solid $color-primary-light 3px;
+            border-bottom: solid $color-primary-light 3px;
+                }
     }
 
     &__text{
         margin: 1rem;
         animation: contentIn3 0.6s ;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include respond(tab-port) { //width < 1100
+            margin: 0;
+        }
+
+    }
+
+    &__paragraph {
+        margin: 1rem;
+        text-indent: 2rem;
     }
 }
 
 .contact {
-    margin: 5rem;
+    margin: auto;
     max-width: 60%;
     text-align: center;
+    @include respond(tab-land) { //width < 1100
+        margin: auto;
+        max-width: 100%;
+
+}
     &__text {
         margin: 2rem;
     }
@@ -267,6 +448,10 @@ a:visited {
 
     &__mail {
         font-size: 2rem;
+        text-align: center;
+        @include respond(tab-port) { //width < 1100
+            font-size: 3rem;
+        }
     }
 }
 

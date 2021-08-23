@@ -75,6 +75,24 @@
   }
 }
 
+@-webkit-keyframes contentIn4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes contentIn4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @-webkit-keyframes contentExpand {
   0% {
     width: 0;
@@ -119,10 +137,26 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media only screen and (min-width: 106.25em) {
+  html {
+    font-size: 75%;
+  }
+}
+
 body {
   font-family: Audiowide, sans-serif;
   background-color: #0A0A0A;
   color: #008C8C;
+}
+
+footer {
+  margin-bottom: 5rem;
 }
 
 h1 {
@@ -143,8 +177,24 @@ p {
   font-size: 1.5rem;
 }
 
+@media only screen and (max-width: 53.75em) {
+  p {
+    font-size: 3rem;
+    text-align: justify;
+  }
+}
+
 ul {
   list-style-type: none;
+  list-style: none outside;
+}
+
+@media only screen and (max-width: 68.75em) {
+  ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 a,
@@ -154,16 +204,20 @@ a:visited {
   text-decoration: none;
 }
 
+span {
+  color: #00BEBE;
+}
+
 .header__sign {
-  -webkit-transform: translateY(5.9rem);
-          transform: translateY(5.9rem);
+  -webkit-transform: translateY(3.9rem);
+          transform: translateY(3.9rem);
 }
 
 .container {
-  height: 10rem;
+  height: 8rem;
   background-image: -webkit-gradient(linear, right top, left top, from(#008C8C), to(#00BEBE));
   background-image: linear-gradient(to left, #008C8C, #00BEBE);
-  margin: 5rem 0 0 0;
+  margin: 3rem 0 0 0;
   padding: 0 10rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -176,6 +230,16 @@ a:visited {
           align-items: flex-end;
 }
 
+@media only screen and (max-width: 38.75em) {
+  .container {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0;
+  }
+}
+
 .center {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -185,8 +249,30 @@ a:visited {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 68.75em) {
+  .center {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
 .content {
   width: 80%;
+  height: 40%;
+}
+
+@media only screen and (max-width: 68.75em) {
+  .content {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 53.75em) {
+  .content {
+    width: 100%;
+  }
 }
 
 .content__about {
@@ -196,10 +282,24 @@ a:visited {
   display: block;
 }
 
+@media only screen and (max-width: 68.75em) {
+  .content__about {
+    -webkit-animation: contentIn4 0.3s;
+            animation: contentIn4 0.3s;
+  }
+}
+
 .content__projects {
   position: relative;
   -webkit-animation: contentIn2 0.2s;
           animation: contentIn2 0.2s;
+}
+
+@media only screen and (max-width: 68.75em) {
+  .content__projects {
+    -webkit-animation: contentIn4 0.3s;
+            animation: contentIn4 0.3s;
+  }
 }
 
 .content__contact {
@@ -208,7 +308,16 @@ a:visited {
           animation: contentIn2 0.2s;
 }
 
+@media only screen and (max-width: 68.75em) {
+  .content__contact {
+    text-align: center;
+    -webkit-animation: contentIn4 0.3s;
+            animation: contentIn4 0.3s;
+  }
+}
+
 .navigation {
+  width: 20%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -224,12 +333,66 @@ a:visited {
           animation: contentIn 1s;
 }
 
+@media only screen and (max-width: 68.75em) {
+  .navigation {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+@media only screen and (max-width: 53.75em) {
+  .navigation {
+    width: 100%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    padding: 5rem 0 0 0;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 38.75em) {
+  .navigation {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin: auto;
+    width: 16rem;
+    font-size: 2.5rem;
+  }
+}
+
 .navigation__button {
   display: inline-block;
   position: relative;
   color: #008C8C;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+@media only screen and (max-width: 68.75em) {
+  .navigation__button {
+    width: 20rem;
+    text-align: center;
+    -webkit-transform: translateY(-18.5rem);
+            transform: translateY(-18.5rem);
+  }
+}
+
+@media only screen and (max-width: 53.75em) {
+  .navigation__button {
+    text-align: center;
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem);
+  }
+}
+
+@media only screen and (max-width: 38.75em) {
+  .navigation__button {
+    text-align: center;
+    width: 16rem;
+    font-size: 2.8rem;
+  }
 }
 
 .navigation__button:after {
@@ -240,22 +403,30 @@ a:visited {
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   height: 3px;
-  bottom: 0;
-  right: 0;
+  bottom: 5px;
+  right: 11%;
   background-color: #00BEBE;
-  -webkit-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
   -webkit-transition: -webkit-transform 0.25s ease-out;
   transition: -webkit-transform 0.25s ease-out;
   transition: transform 0.25s ease-out;
   transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
 }
 
+@media only screen and (max-width: 68.75em) {
+  .navigation__button:after {
+    width: 80%;
+    bottom: 5px;
+    right: 11%;
+  }
+}
+
 .navigation__button:hover:after {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transform-origin: bottom right;
-          transform-origin: bottom right;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
 }
 
 .navigation__button:hover {
@@ -265,7 +436,7 @@ a:visited {
 }
 
 .project {
-  margin-right: 4rem;
+  margin: auto;
   font-size: 2.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,6 +448,19 @@ a:visited {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 78.125em) {
+  .project {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 53.75em) {
+  .project {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
 .project__button {
   padding: 1.5rem;
   margin: 0 1rem;
@@ -285,7 +469,25 @@ a:visited {
   border: #0A0A0A solid 0.2rem;
 }
 
-.project__button:hover, .project__button:focus {
+@media only screen and (max-width: 78.125em) {
+  .project__button {
+    width: 10rem;
+  }
+}
+
+@media only screen and (max-width: 53.75em) {
+  .project__button {
+    width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 38.75em) {
+  .project__button {
+    width: 30rem;
+  }
+}
+
+.project__button:hover {
   cursor: pointer;
   border: #00BEBE solid 0.2rem;
   border-radius: 1rem;
@@ -293,7 +495,7 @@ a:visited {
   transition: all 0.5s ease;
 }
 
-.project__button:hover .project__img, .project__button:focus .project__img {
+.project__button:hover .project__img {
   border-bottom: solid #00BEBE 2px;
   border-top: solid #00BEBE 2px;
   -webkit-transition: all 1s ease;
@@ -308,6 +510,27 @@ a:visited {
   border-top: solid #008C8C 2px;
 }
 
+@media only screen and (max-width: 78.125em) {
+  .project__img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+@media only screen and (max-width: 53.75em) {
+  .project__img {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+@media only screen and (max-width: 38.75em) {
+  .project__img {
+    width: 30rem;
+    height: 30rem;
+  }
+}
+
 .project__description {
   text-align: center;
 }
@@ -315,6 +538,19 @@ a:visited {
 .title {
   font-size: 5rem;
   margin-top: -4.9rem;
+}
+
+@media only screen and (max-width: 68.75em) {
+  .title {
+    margin-top: -5rem;
+  }
+}
+
+@media only screen and (max-width: 53.75em) {
+  .title {
+    margin-top: 0rem;
+    text-align: center;
+  }
 }
 
 .hidden {
@@ -335,20 +571,39 @@ a:visited {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 3rem;
-  -webkit-box-shadow: inset 3px 0px 0px 3px #00BEBE;
-          box-shadow: inset 3px 0px 0px 3px #00BEBE;
   -webkit-animation: contentExpand 0.5s;
           animation: contentExpand 0.5s;
-  max-height: 30rem;
+  min-height: auto;
+  border-top: solid #00BEBE 3px;
+  border-bottom: solid #00BEBE 3px;
+}
+
+@media only screen and (max-width: 53.75em) {
+  .about {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border-top: none;
+    border-bottom: none;
+  }
 }
 
 .about__img {
-  height: 30rem;
+  height: 35rem;
   border-radius: 3rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-bottom: solid #00BEBE 3px;
-  border-top: solid #00BEBE 3px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media only screen and (max-width: 53.75em) {
+  .about__img {
+    border-top: solid #00BEBE 3px;
+    border-bottom: solid #00BEBE 3px;
+  }
 }
 
 .about__text {
@@ -356,12 +611,40 @@ a:visited {
   -webkit-animation: contentIn3 0.6s;
           animation: contentIn3 0.6s;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media only screen and (max-width: 53.75em) {
+  .about__text {
+    margin: 0;
+  }
+}
+
+.about__paragraph {
+  margin: 1rem;
+  text-indent: 2rem;
 }
 
 .contact {
-  margin: 5rem;
+  margin: auto;
   max-width: 60%;
   text-align: center;
+}
+
+@media only screen and (max-width: 68.75em) {
+  .contact {
+    margin: auto;
+    max-width: 100%;
+  }
 }
 
 .contact__text {
@@ -380,6 +663,13 @@ a:visited {
 
 .contact__mail {
   font-size: 2rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 53.75em) {
+  .contact__mail {
+    font-size: 3rem;
+  }
 }
 
 .clearfix {
