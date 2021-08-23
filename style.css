@@ -177,8 +177,8 @@ h1 {
 @media only screen and (max-width: 28.125em) {
   h1 {
     font-size: 4.5rem;
-    -webkit-transform: translateY(1.7rem);
-            transform: translateY(1.7rem);
+    -webkit-transform: translateY(1.3rem);
+            transform: translateY(1.3rem);
   }
 }
 
@@ -233,6 +233,13 @@ span {
 .header__sign {
   -webkit-transform: translateY(3.9rem);
           transform: translateY(3.9rem);
+}
+
+@media only screen and (max-width: 28.125em) {
+  .header__sign {
+    -webkit-transform: translateY(3.7rem);
+            transform: translateY(3.7rem);
+  }
 }
 
 .container {

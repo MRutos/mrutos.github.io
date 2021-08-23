@@ -102,7 +102,7 @@ h1 {
     }
     @include respond(small-phone) { //width < 1100
         font-size: 4.5rem;
-        transform: translateY(1.7rem);
+        transform: translateY(1.3rem);
     }
 }
 
@@ -146,6 +146,10 @@ span {
 .header {
     &__sign {
         transform: translateY(3.9rem);
+        @include respond(small-phone) { //width < 1200
+            transform: translateY(3.7rem);
+
+        }
     }
 }
 
