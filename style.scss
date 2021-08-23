@@ -45,6 +45,9 @@ $color-primary-dark: #008C8C;
 
 //RESPOND
 @mixin respond($breakpoint) {
+    @if $breakpoint == small-phone {
+        @media only screen and (max-width: 28.125em) { @content } //450px
+    };
     @if $breakpoint == phone {
         @media only screen and (max-width: 38.75em) { @content } //620px
     };
@@ -96,7 +99,10 @@ h1 {
     @include respond(phone) { //width < 1100
         font-size: 5.5rem;
         transform: translateY(1.7rem);
-
+    }
+    @include respond(small-phone) { //width < 1100
+        font-size: 4.5rem;
+        transform: translateY(1.7rem);
     }
 }
 
@@ -253,6 +259,10 @@ span {
             text-align: center;
             width: 14rem;
             font-size: 2.5rem;
+        }
+        @include respond(small-phone) { //width < 1100
+            width: 12rem;
+            font-size: 2rem;
         }
          
         &:after {

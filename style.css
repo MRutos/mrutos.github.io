@@ -174,6 +174,14 @@ h1 {
   }
 }
 
+@media only screen and (max-width: 28.125em) {
+  h1 {
+    font-size: 4.5rem;
+    -webkit-transform: translateY(1.7rem);
+            transform: translateY(1.7rem);
+  }
+}
+
 h2 {
   color: #00BEBE;
   font-size: 3rem;
@@ -406,6 +414,13 @@ span {
     text-align: center;
     width: 14rem;
     font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 28.125em) {
+  .navigation__button {
+    width: 12rem;
+    font-size: 2rem;
   }
 }
 
